@@ -1,0 +1,64 @@
+/*样式去重*/
+*{
+  box-sizing: border-box;
+}
+body, p, img, dl, dt, dd, ul, ol, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+/* 电脑的字体 */
+/*body { position: relative; font-family: "PingFang SC","微软雅黑","Microsoft YaHei",Helvetica,"Helvetica Neue",Tahoma,Arial,sans-serif, Arial; color: #000; text-align: left; }*/
+/* 手机的字体 */
+body {
+  min-width: 320px;
+  max-width: 640px;
+  background: #fff;
+  font-size: 12px;
+  margin: 0 auto;
+  font-family: "PingFang SC",-apple-system,Helvetica,sans-serif;
+  /*line-height: 1.5;*/
+  color: #666;
+  -webkit-text-size-adjust: 100%!important;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom); }
+ul, ol { list-style: none; }
+img { border: 0 none; }
+input, select { vertical-align: middle; }
+table { border-collapse: collapse; }
+s, em, i { font-style: normal; text-decoration: none; }
+/*浮动*/
+.am-fl{float: left;}
+.am-fl{float: right;}
+.am-cf{*zoom: 1}
+.am-cf:after{clear: both;content: ".";display: block;height: 0;overflow: hidden;visibility: hidden;zoom: 1;}
+
+/* number 去除右边的小三 */
+input[type="number"]{
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+a {
+  /*取消a标签手指按下时出现的黑色遮罩层*/
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: #818788;
+}
+input {
+  /* 解决IOS下表单元素圆角的问题  但是会有问题  需要注意一下 最好用css来模拟 单选或者多选 */
+  -webkit-appearance: none;
+}
+input::-webkit-input-placeholder {
+  /* 这是个 placeholder 字的设置*/
+  color: #aab2bd;
+  font-size: 14px;
+}
+/* 手机端控制  鼠标按下去的颜色*/
+a:focus, a:hover {
+  color: #818788;
+}
+
+input[type="checkbox"]:checked + label i:after {
+  /* 要注意的是 input 的位置 一定在css模拟样式的前面 才能生效 */
+}
+/* 显示省略号 */
+.ellipsis{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
